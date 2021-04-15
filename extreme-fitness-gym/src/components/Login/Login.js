@@ -159,7 +159,7 @@ const Login = () => {
       <div className="container p-1">
         <button
           className="btn btn-success m-1 text-left"
-          style={{ width: "16rem" }}
+          style={{ width: "18rem" }}
           onClick={handleGoogleSignIn}
         >
           <FontAwesomeIcon className="mr-3" icon={faGoogle} /> Connect with
@@ -168,7 +168,7 @@ const Login = () => {
         <br />
         <button
           className="btn btn-primary m-1 text-left"
-          style={{ width: "16rem" }}
+          style={{ width: "18rem" }}
           onClick={handleFacebookSignIn}
         >
           <FontAwesomeIcon className="mr-3" icon={faFacebook} /> Connect with

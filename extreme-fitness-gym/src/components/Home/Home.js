@@ -3,9 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import man1 from "../../data/images/1.jpg";
-import woman from "../../data/images/2.jpg";
-import man2 from "../../data/images/3.jpg";
+import ServicesCard from "../ServicesCard/ServicesCard";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   return (
@@ -13,15 +12,19 @@ const Home = () => {
       <Header />
       <Carousel>
         <div>
-          <img src={man1} style={{ width: "100%" }} />
+          <img src="https://i.ibb.co/HqY2Xqm/1.jpg" style={{ width: "100%" }} />
         </div>
         <div>
-          <img src={man2} style={{ width: "100%" }} />
+          <img src="https://i.ibb.co/vBMSFNW/3.jpg" style={{ width: "100%" }} />
         </div>
         <div>
-          <img src={woman} style={{ width: "100%" }} />
+          <img src="https://i.ibb.co/M93jzYp/2.jpg" style={{ width: "100%" }} />
         </div>
       </Carousel>
+      <h1 className="text-info">Our Courses</h1>
+      <ServicesCard></ServicesCard>
+      <h1 className="text-info">Customer Reviews</h1>
+      <Reviews></Reviews>
       <Footer />
     </main>
   );
