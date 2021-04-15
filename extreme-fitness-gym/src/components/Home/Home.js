@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import ServicesCard from "../ServicesCard/ServicesCard";
 import Reviews from "../Reviews/Reviews";
+import About from "../About/About";
 
 const Home = () => {
   return (
@@ -25,6 +26,8 @@ const Home = () => {
       <ServicesCard></ServicesCard>
       <h1 className="text-info">Customer Reviews</h1>
       <Reviews></Reviews>
+      <h1 className="text-info">About us</h1>
+      <About></About>
       <Footer />
     </main>
   );

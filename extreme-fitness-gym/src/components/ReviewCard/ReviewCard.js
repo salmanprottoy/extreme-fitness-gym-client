@@ -1,36 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
-const ReviewCard = () => {
+const ReviewCard = ({ review }) => {
   return (
     <div className="col-md-4 mb-5">
-      <div class="card text-center h-100 shadow bg-white g-3 p-4 m-2 rounded border-0">
+      <div class="card text-center shadow bg-white g-3 p-3 m-2 rounded border-0">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-4">
             <img
-              class="card-img-top p-4"
-              src=""
-              style={{ width: "100%" }}
+              class="rounded-circle"
+              src={review.img}
+              style={{ height: "120px" }}
               alt=""
             />
           </div>
-          <div className="col-md-9">
-            <h3></h3>
+          <div className="col-md-8 text-left">
+            <h3>{review.customerName}</h3>
+            <p>{review.designation}</p>
+            <ReactStars
+              count={5}
+              isHalf={true}
+              size={24}
+              edit={false}
+              value={review.rating}
+              activeColor="#17a2b8"
+            />
           </div>
         </div>
         <div class="card-body text-left">
-          <h3 class="card-title text-info"></h3>
-          <p></p>
-          <div class="d-flex justify-content-between">
-            <div class="text-left">
-              <h3 className="text-info">$</h3>
-            </div>
-            <div class="text-right">
-              <Link to="" className="text-decoration-none">
-                <button className="btn btn-info">Buy Now</button>
-              </Link>
-            </div>
-          </div>
+          <p>{review.review}</p>
         </div>
       </div>
     </div>
