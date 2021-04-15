@@ -6,15 +6,15 @@ const ReviewCard = ({ review }) => {
     <div className="col-md-4 mb-5">
       <div class="card text-center shadow bg-white g-3 p-3 m-2 rounded border-0">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 p-2">
             <img
               class="rounded-circle"
               src={review.img}
-              style={{ height: "120px" }}
+              style={{ height: "100px" }}
               alt=""
             />
           </div>
-          <div className="col-md-8 text-left">
+          <div className="col-md-8 text-left p-2">
             <h3>{review.customerName}</h3>
             <p>{review.designation}</p>
             <ReactStars
@@ -26,9 +26,9 @@ const ReviewCard = ({ review }) => {
               activeColor="#17a2b8"
             />
           </div>
-        </div>
-        <div class="card-body text-left">
-          <p>{review.review}</p>
+          <p className="text-left">
+            "<i>{review.review}</i>"
+          </p>
         </div>
       </div>
     </div>

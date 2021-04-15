@@ -23,12 +23,14 @@ const Home = () => {
           <img src="https://i.ibb.co/M93jzYp/2.jpg" style={{ width: "100%" }} />
         </div>
       </Carousel>
-      <h1 className="text-info">About us</h1>
+      <h1 className="text-info mb-5">About us</h1>
       <About></About>
-      <h1 className="text-info">Our Trainers</h1>
-      <Trainers></Trainers>
+      <br/>
+      <br/>
       <h1 className="text-info">Our Courses</h1>
       <ServicesCard></ServicesCard>
+      <h1 className="text-info">Our Trainers</h1>
+      <Trainers></Trainers>
       <h1 className="text-info">Customer Reviews</h1>
       <Reviews></Reviews>
       <Footer />

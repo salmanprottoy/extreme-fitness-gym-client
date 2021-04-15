@@ -10,6 +10,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Signup from "./components/Signup/Signup";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import ServicesCard from "./components/ServicesCard/ServicesCard";
+import About from "./components/About/About";
+import Logout from "./components/Logout/Logout";
 
 export const UserContext = createContext();
 
@@ -32,6 +35,7 @@ function App() {
             </PrivateRoute>
             <Route path="/courses">
               <Header />
+              <ServicesCard />
               <Footer />
             </Route>
             <Route path="/schedule">
@@ -46,13 +50,27 @@ function App() {
               <Admin />
               <Footer />
             </PrivateRoute>
+            <PrivateRoute path="/manageCourses">
+              <Admin />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/manageTrainers">
+              <Admin />
+              <Footer />
+            </PrivateRoute>
             <Route path="/about">
               <Header />
+              <About />
               <Footer />
             </Route>
             <Route path="/login">
               <Header />
               <Login />
+              <Footer />
+            </Route>
+            <Route path="/logout">
+              <Header />
+              <Logout />
               <Footer />
             </Route>
             <Route path="/signup">

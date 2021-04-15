@@ -6,7 +6,7 @@ const ServicesCardInfo = ({ service }) => {
     <div className="col-md-4 mb-5">
       <div class="card text-center h-100 shadow bg-white g-3 p-4 m-2 rounded border-0">
         <img
-          class="card-img-top p-4"
+          class="card-img p-4 rounded"
           src={service.img}
           style={{ width: "100%" }}
           alt=""

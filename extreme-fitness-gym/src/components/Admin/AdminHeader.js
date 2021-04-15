@@ -4,7 +4,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
-const Header = () => {
+const AdminHeader = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
@@ -22,34 +22,19 @@ const Header = () => {
             </Link>
           </Nav.Link>
           <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/about">
-              About us
+            <Link className="nav-link mr-4 text-white" to="/manageCourses">
+              Manage Courses
             </Link>
           </Nav.Link>
           <Nav.Link href="">
-            <Link class="nav-link mr-4 text-white" to="/courses">
-              Courses
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/schedule">
-              Schedule
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/blog">
-              Blog
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/admin">
-              Admin
+            <Link className="nav-link mr-4 text-white" to="/manageTrainers">
+              Manage Trainers
             </Link>
           </Nav.Link>
           <Nav.Link href="">
             {loggerInUser.name ? (
-              <Link className="nav-link mr-4 text-white" to="/">
-                {loggerInUser.name}
+              <Link className="nav-link mr-4 text-white" to="/logout">
+                Logout
               </Link>
             ) : (
               <Link className="nav-link mr-4 text-white" to="/login">
@@ -63,4 +48,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AdminHeader;
