@@ -13,6 +13,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ServicesCard from "./components/ServicesCard/ServicesCard";
 import About from "./components/About/About";
 import Logout from "./components/Logout/Logout";
+import Checkout from "./components/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -46,6 +47,11 @@ function App() {
               <Header />
               <Footer />
             </Route>
+            <PrivateRoute path="/checkout/:key">
+              <Admin />
+              <Checkout />
+              <Footer />
+            </PrivateRoute>
             <PrivateRoute path="/admin">
               <Admin />
               <Footer />

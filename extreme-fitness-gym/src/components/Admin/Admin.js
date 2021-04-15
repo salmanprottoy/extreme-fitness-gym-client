@@ -11,7 +11,7 @@ const Admin = () => {
 
   if (loggerInUser.email !== "salman.prottoy@gmail.com") {
     localStorage.clear();
-    history.replace(from);
+    //history.replace(from);
   }
   return (
     <div>
