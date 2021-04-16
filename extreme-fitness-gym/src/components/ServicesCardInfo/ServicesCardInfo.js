@@ -13,18 +13,18 @@ const ServicesCardInfo = ({ service }) => {
           alt=""
         />
         <div class="card-body text-left">
-          <h3 class="card-title text-info">{service.name}</h3>
+          <h3 class="card-title text-info-color">{service.name}</h3>
           <p></p>
           <div class="d-flex justify-content-between">
             <div class="text-left">
-              <h3 className="text-info">${service.price}</h3>
+              <h3 className="text-info-color">${service.price}</h3>
             </div>
             <div class="text-right">
               <Link
                 to={`/checkout/${service._id}`}
                 className="text-decoration-none"
               >
-                <button className="btn btn-info">Join Now</button>
+                <button className="btn btn-secondary">Join Now</button>
               </Link>
             </div>
           </div>

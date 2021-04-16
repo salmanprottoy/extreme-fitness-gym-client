@@ -103,9 +103,9 @@ const Footer = () => {
           </li>
         </ul>
 
-        <p className="text-center">
+        <p className="text-center text-white">
           &copy; {new Date().getFullYear()} Developed by{" "}
-          <a className="text-info" href="https://github.com/salmanprottoy">
+          <a className="text-white" href="https://github.com/salmanprottoy">
             {" "}
             <FontAwesomeIcon icon={faGithub} /> Salman Prottoy{" "}
           </a>

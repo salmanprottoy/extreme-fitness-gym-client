@@ -111,9 +111,9 @@ const Login = () => {
       <div className="container">
         <form
           onSubmit={() => handleSubmit()}
-          className="border border-info p-3 m-2 rounded"
+          className="border border-secondary p-3 m-2 rounded"
         >
-          <h3 className="text-center text-info">Login</h3>
+          <h3 className="text-center text-info-color">Login</h3>
           <div className="form-group">
             <input
               type="email"
@@ -144,7 +144,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-info m-2"
+            className="btn btn-secondary m-2"
             style={{ width: "12rem" }}
           >
             Login

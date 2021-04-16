@@ -7,7 +7,7 @@ import { UserContext } from "../../App";
 const Header = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand>
         <Link className="nav-link mr-4 text-white" to="/">
           <i>Extreme Fitness GYM</i>
@@ -32,8 +32,8 @@ const Header = () => {
             </Link>
           </Nav.Link>
           <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/schedule">
-              Schedule
+            <Link className="nav-link mr-4 text-white" to="/contact">
+              Contact
             </Link>
           </Nav.Link>
           <Nav.Link href="">

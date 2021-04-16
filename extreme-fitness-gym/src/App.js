@@ -12,8 +12,11 @@ import Signup from "./components/Signup/Signup";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ServicesCard from "./components/ServicesCard/ServicesCard";
 import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 import Logout from "./components/Logout/Logout";
 import Checkout from "./components/Checkout/Checkout";
+import ManageCourses from "./components/ManageCourses/ManageCourses";
+import ManageTrainers from "./components/ManageTrainers/ManageTrainers";
 
 export const UserContext = createContext();
 
@@ -39,13 +42,13 @@ function App() {
               <ServicesCard />
               <Footer />
             </Route>
-            <Route path="/schedule">
+            <Route path="/contact">
               <Header />
+              <Contact />
               <Footer />
             </Route>
             <Route path="/blog">
               <Header />
-
               <Footer />
             </Route>
             <PrivateRoute path="/checkout/:key">
@@ -59,10 +62,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageCourses">
               <Admin />
+              <ManageCourses />
               <Footer />
             </PrivateRoute>
             <PrivateRoute path="/manageTrainers">
               <Admin />
+              <ManageTrainers />
               <Footer />
             </PrivateRoute>
             <Route path="/about">

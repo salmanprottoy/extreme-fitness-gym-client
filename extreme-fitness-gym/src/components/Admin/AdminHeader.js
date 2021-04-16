@@ -7,7 +7,7 @@ import { UserContext } from "../../App";
 const AdminHeader = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand>
         <Link className="nav-link mr-4 text-white" to="/">
           <i>Extreme Fitness GYM</i>
@@ -17,7 +17,7 @@ const AdminHeader = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link href="">
-            <Link className="nav-link mr-4 text-white" to="/home">
+            <Link className="nav-link mr-4 text-white" to="/admin">
               Home
             </Link>
           </Nav.Link>

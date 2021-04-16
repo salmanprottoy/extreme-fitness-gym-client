@@ -1,8 +1,10 @@
 .App {
   text-align: center;
-  background-color: #cce5e7ea;
+  background-color: #e6e6e6;
 }
-
+.text-info-color {
+  color: #282c34;
+}
 
 .App-logo {
   height: 40vmin;

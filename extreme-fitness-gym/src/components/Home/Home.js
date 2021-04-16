@@ -7,6 +7,7 @@ import ServicesCard from "../ServicesCard/ServicesCard";
 import Reviews from "../Reviews/Reviews";
 import About from "../About/About";
 import Trainers from "../Trainers/Trainers";
+import Contact from "../Contact/Contact";
 
 const Home = () => {
   return (
@@ -23,16 +24,17 @@ const Home = () => {
           <img src="https://i.ibb.co/M93jzYp/2.jpg" style={{ width: "100%" }} />
         </div>
       </Carousel>
-      <h1 className="text-info mb-5">About us</h1>
+      <h1 className="text-info-color mb-5">About us</h1>
       <About></About>
-      <br/>
-      <br/>
-      <h1 className="text-info">Our Courses</h1>
+      <br />
+      <br />
+      <h1 className="text-info-color">Our Courses</h1>
       <ServicesCard></ServicesCard>
-      <h1 className="text-info">Our Trainers</h1>
+      <h1 className="text-info-color">Our Trainers</h1>
       <Trainers></Trainers>
-      <h1 className="text-info">Customer Reviews</h1>
+      <h1 className="text-info-color">Customer Reviews</h1>
       <Reviews></Reviews>
+      <Contact />
       <Footer />
     </main>
   );

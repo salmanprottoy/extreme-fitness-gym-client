@@ -65,10 +65,10 @@ const Signup = () => {
     <div>
       <div className="container">
         <form
-          className="border border-info p-3 m-2 rounded"
+          className="border border-secondary p-3 m-2 rounded"
           onSubmit={() => handleSubmit()}
         >
-          <h3 className="text-center text-info">Signup</h3>
+          <h3 className="text-center text-info-color">Signup</h3>
           <div className="form-group">
             <input
               type="text"
@@ -108,7 +108,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            class="btn btn-info"
+            class="btn btn-secondary"
             style={{ width: "12rem" }}
             onClick={handleSubmit}
           >

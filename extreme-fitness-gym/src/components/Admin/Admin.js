@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../../App";
 import AdminHeader from "./AdminHeader";
 import { useHistory, useLocation } from "react-router";
+import AdminDashboard from "../AdminDashboard/AdminDashboard";
 
 const Admin = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
@@ -16,6 +17,7 @@ const Admin = () => {
   return (
     <div>
       <AdminHeader />
+      <AdminDashboard />
     </div>
   );
 };
