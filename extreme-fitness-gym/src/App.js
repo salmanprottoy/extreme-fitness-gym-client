@@ -17,6 +17,7 @@ import Logout from "./components/Logout/Logout";
 import Checkout from "./components/Checkout/Checkout";
 import ManageCourses from "./components/ManageCourses/ManageCourses";
 import ManageTrainers from "./components/ManageTrainers/ManageTrainers";
+import UserDashboard from "./components/UserDashboard/UserDashboard";
 
 export const UserContext = createContext();
 
@@ -51,8 +52,13 @@ function App() {
               <Header />
               <Footer />
             </Route>
+            <PrivateRoute path="/profile">
+              <Header />
+              <UserDashboard />
+              <Footer />
+            </PrivateRoute>
             <PrivateRoute path="/checkout/:key">
-              <Admin />
+              <Header />
               <Checkout />
               <Footer />
             </PrivateRoute>
