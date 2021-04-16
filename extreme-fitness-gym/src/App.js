@@ -45,6 +45,7 @@ function App() {
             </Route>
             <Route path="/blog">
               <Header />
+              <Checkout />
               <Footer />
             </Route>
             <PrivateRoute path="/checkout/:key">
