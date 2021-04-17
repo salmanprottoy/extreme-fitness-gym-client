@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Table } from "react-bootstrap";
 import Order from "../Order/Order";
 import * as ReactBootstrap from "react-bootstrap";
+import AddReview from "../AddReview/AddReview";
 
 const UserDashboard = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
@@ -26,7 +27,7 @@ const UserDashboard = () => {
   return (
     <div>
       <h1>Welcome, {loggerInUser.name}</h1>
-      <div className="container mt-3">
+      <div className="container mt-3 mb-3">
         {loading ? (
           <br />
         ) : (
@@ -45,6 +46,9 @@ const UserDashboard = () => {
             <Order order={order}></Order>
           ))}
         </Table>
+      </div>
+      <div className="container mt-3 mb-3">
+        <AddReview />
       </div>
     </div>
   );

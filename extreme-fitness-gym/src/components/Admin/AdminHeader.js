@@ -18,7 +18,7 @@ const AdminHeader = () => {
         <Nav className="ml-auto">
           <Nav.Link href="">
             <Link className="nav-link mr-4 text-white" to="/admin">
-              Home
+              Admin Dashboard
             </Link>
           </Nav.Link>
           <Nav.Link href="">

@@ -49,7 +49,8 @@ const Header = () => {
           <Nav.Link href="">
             {loggerInUser.name ? (
               <Link className="nav-link mr-4 text-white" to="/profile">
-                {loggerInUser.name}
+                {/* {loggerInUser.name} */}
+                User Profile
               </Link>
             ) : (
               <Link className="nav-link mr-4 text-white" to="/login">
