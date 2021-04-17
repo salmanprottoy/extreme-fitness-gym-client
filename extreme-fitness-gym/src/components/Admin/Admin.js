@@ -17,7 +17,6 @@ const Admin = () => {
   return (
     <div>
       <AdminHeader />
-      <AdminDashboard />
     </div>
   );
 };

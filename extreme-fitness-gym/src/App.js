@@ -22,6 +22,7 @@ import AddCourse from "./components/AddCourse/AddCourse";
 import AddAdmin from "./components/AddAdmin/AddAdmin";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import OrderConfirmation from "./components/OrderConfirmation/OrderConfirmation";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 
 export const UserContext = createContext();
 
@@ -68,6 +69,7 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/admin">
               <Admin />
+              <AdminDashboard />
               <Footer />
             </PrivateRoute>
             <PrivateRoute path="/manageCourses">
