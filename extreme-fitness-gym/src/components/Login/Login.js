@@ -30,6 +30,7 @@ const Login = () => {
   } else {
     firebase.app();
   }
+
   const handleFacebookSignIn = () => {
     firebase
       .auth()
@@ -38,6 +39,7 @@ const Login = () => {
         const { displayName, email } = result.user;
         const sinnedInUser = { name: displayName, email };
         setLoggedInUser(sinnedInUser);
+
         history.replace(from);
       })
       .catch((error) => {
@@ -48,6 +50,7 @@ const Login = () => {
         console.log(errorCode, errorMessage, email, credential);
       });
   };
+
   const handleGoogleSignIn = () => {
     firebase
       .auth()
@@ -56,6 +59,7 @@ const Login = () => {
         const { displayName, email } = result.user;
         const sinnedInUser = { name: displayName, email };
         setLoggedInUser(sinnedInUser);
+        setUserToken();
         history.replace(from);
       })
       .catch((error) => {
@@ -64,6 +68,18 @@ const Login = () => {
         var email = error.email;
         var credential = error.credential;
         console.log(errorCode, errorMessage, email, credential);
+      });
+  };
+
+  const setUserToken = () => {
+    firebase
+      .auth()
+      .currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem("token", idToken);
+      })
+      .catch(function (error) {
+        // Handle error
       });
   };
   const handleBlur = (e) => {

@@ -22,13 +22,28 @@ const AdminHeader = () => {
             </Link>
           </Nav.Link>
           <Nav.Link href="">
+            <Link className="nav-link mr-4 text-white" to="/addCourse">
+              Add Course
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
             <Link className="nav-link mr-4 text-white" to="/manageCourses">
               Manage Courses
             </Link>
           </Nav.Link>
           <Nav.Link href="">
+            <Link className="nav-link mr-4 text-white" to="/addTrainer">
+              Add Trainer
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
             <Link className="nav-link mr-4 text-white" to="/manageTrainers">
               Manage Trainers
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="">
+            <Link className="nav-link mr-4 text-white" to="/addAdmin">
+              Add Admin
             </Link>
           </Nav.Link>
           <Nav.Link href="">

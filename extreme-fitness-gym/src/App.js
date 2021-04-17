@@ -17,7 +17,11 @@ import Logout from "./components/Logout/Logout";
 import Checkout from "./components/Checkout/Checkout";
 import ManageCourses from "./components/ManageCourses/ManageCourses";
 import ManageTrainers from "./components/ManageTrainers/ManageTrainers";
+import AddTrainer from "./components/AddTrainer/AddTrainer";
+import AddCourse from "./components/AddCourse/AddCourse";
+import AddAdmin from "./components/AddAdmin/AddAdmin";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import OrderConfirmation from "./components/OrderConfirmation/OrderConfirmation";
 
 export const UserContext = createContext();
 
@@ -57,9 +61,9 @@ function App() {
               <UserDashboard />
               <Footer />
             </PrivateRoute>
-            <PrivateRoute path="/checkout/:key">
+            <PrivateRoute path="/checkout/:id">
               <Header />
-              <Checkout />
+              <OrderConfirmation />
               <Footer />
             </PrivateRoute>
             <PrivateRoute path="/admin">
@@ -74,6 +78,21 @@ function App() {
             <PrivateRoute path="/manageTrainers">
               <Admin />
               <ManageTrainers />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/addTrainer">
+              <Admin />
+              <AddTrainer />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/addCourse">
+              <Admin />
+              <AddCourse />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/addAdmin">
+              <Admin />
+              <AddAdmin />
               <Footer />
             </PrivateRoute>
             <Route path="/about">
