@@ -33,7 +33,7 @@ const AddTrainer = () => {
       quotes: data.quotes,
       img: imgURL,
     };
-    const url = "http://localhost:5000/addTrainer";
+    const url = "https://intense-river-14020.herokuapp.com/addTrainer";
     console.log(trainerData);
     fetch(url, {
       method: "POST",

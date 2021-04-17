@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext } from "react";
-import { Card, ListGroup } from "react-bootstrap";
 import { UserContext } from "../../App";
 import "./UserDashboard.css";
 import { useEffect } from "react";
@@ -16,7 +15,7 @@ const UserDashboard = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://intense-river-14020.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

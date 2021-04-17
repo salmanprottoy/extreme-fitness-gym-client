@@ -10,7 +10,7 @@ const AddAdmin = () => {
     const adminData = {
       email: data.email,
     };
-    const url = "http://localhost:5000/addAdmin";
+    const url = "https://intense-river-14020.herokuapp.com/addAdmin";
     console.log(adminData);
     fetch(url, {
       method: "POST",

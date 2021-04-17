@@ -7,7 +7,7 @@ const CourseElement = ({ course }) => {
   const history = useHistory();
   const deleteCourse = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/services/delete/${id}`, {
+    fetch(`https://intense-river-14020.herokuapp.com/services/delete/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

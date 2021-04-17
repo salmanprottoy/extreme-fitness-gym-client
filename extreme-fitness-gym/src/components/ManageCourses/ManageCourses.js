@@ -3,18 +3,26 @@ import { Table } from "react-bootstrap";
 import { useEffect } from "react";
 import { useState } from "react";
 import CourseElement from "../CourseElement/CourseElement";
+import * as ReactBootstrap from "react-bootstrap";
 
 const ManageCourses = () => {
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://intense-river-14020.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data);
+        setLoading(true);
       });
   }, []);
   return (
     <div className="container mt-3">
+      {loading ? (
+        <br />
+      ) : (
+        <ReactBootstrap.Spinner animation="border" variant="info" />
+      )}
       <Table striped bordered hover className="mt-1">
         <thead>
           <tr>

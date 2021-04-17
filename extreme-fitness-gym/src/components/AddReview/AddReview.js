@@ -36,7 +36,7 @@ const AddReview = () => {
       rating: data.rating,
       img: imgURL,
     };
-    const url = "http://localhost:5000/addReview";
+    const url = "https://intense-river-14020.herokuapp.com/addReview";
     console.log(reviewData);
     fetch(url, {
       method: "POST",

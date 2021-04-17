@@ -15,7 +15,7 @@ const OrderConfirmation = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://intense-river-14020.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCourse(data);
@@ -31,7 +31,7 @@ const OrderConfirmation = () => {
       orderTime: new Date(),
     };
 
-    fetch("http://localhost:5000/services/addOrder", {
+    fetch("https://intense-river-14020.herokuapp.com/services/addOrder", {
       method: "POST",
       headers: {
         "content-type": "application/json",

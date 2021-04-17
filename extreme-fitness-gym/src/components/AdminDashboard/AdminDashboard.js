@@ -4,23 +4,29 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { UserContext } from "../../App";
 import "./AdminDashboard.css";
+import * as ReactBootstrap from "react-bootstrap";
 
 const AdminDashboard = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("http://localhost:5000/isAdmin", {
+    fetch("https://intense-river-14020.herokuapp.com/isAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email: loggerInUser.email }),
     })
       .then((res) => res.json())
-      .then((data) => setIsAdmin(data));
+      .then((data) => {
+        setIsAdmin(data);
+        setLoading(true);
+      });
   }, []);
 
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://intense-river-14020.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -29,7 +35,7 @@ const AdminDashboard = () => {
 
   const [trainers, setTrainers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/trainers")
+    fetch("https://intense-river-14020.herokuapp.com/trainers")
       .then((res) => res.json())
       .then((data) => {
         setTrainers(data);
@@ -38,7 +44,7 @@ const AdminDashboard = () => {
 
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://intense-river-14020.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -47,7 +53,7 @@ const AdminDashboard = () => {
 
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin")
+    fetch("https://intense-river-14020.herokuapp.com/admin")
       .then((res) => res.json())
       .then((data) => {
         setAdmins(data);
@@ -56,6 +62,11 @@ const AdminDashboard = () => {
 
   return (
     <div className="container mt-5 mb-5">
+      {loading ? (
+        <br />
+      ) : (
+        <ReactBootstrap.Spinner animation="border" variant="info" />
+      )}
       {isAdmin && (
         <div className="row">
           <div className="col-lg-3 col-sm-6">

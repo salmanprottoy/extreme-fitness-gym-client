@@ -10,7 +10,7 @@ const AdminHeader = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/isAdmin", {
+    fetch("https://intense-river-14020.herokuapp.com/isAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email: loggerInUser.email }),

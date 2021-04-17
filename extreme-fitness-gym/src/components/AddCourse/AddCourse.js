@@ -31,7 +31,7 @@ const AddCourse = () => {
       price: data.price,
       img: imgURL,
     };
-    const url = "http://localhost:5000/addService";
+    const url = "https://intense-river-14020.herokuapp.com/addService";
     console.log(courseData);
     fetch(url, {
       method: "POST",
