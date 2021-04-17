@@ -92,7 +92,7 @@ const AddReview = () => {
           <input
             className="btn btn-info text-white"
             type="submit"
-            value="Add Trainer"
+            value="Add Review"
           />
         </form>
       </div>
