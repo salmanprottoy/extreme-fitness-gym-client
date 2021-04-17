@@ -1,17 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Animated } from "react-animated-css";
 
 const ServicesCardInfo = ({ service }) => {
   console.log(service);
   return (
     <div className="col-md-4 mb-5">
       <div class="card text-center h-100 shadow bg-white g-3 p-4 m-2 rounded border-0">
-        <img
-          class="card-img p-4 rounded"
-          src={service.img}
-          style={{ width: "100%" }}
-          alt=""
-        />
+        <Animated
+          animationIn="zoomIn"
+          animationOut="zoomOutDown"
+          animationInDuration={3000}
+          animationOutDuration={3000}
+          isVisible={true}
+        >
+          <div>
+            <img
+              class="card-img p-4 rounded"
+              src={service.img}
+              style={{ width: "100%" }}
+              alt=""
+            />
+          </div>
+        </Animated>
+
         <div class="card-body text-left">
           <h3 class="card-title text-info-color">{service.name}</h3>
           <p></p>

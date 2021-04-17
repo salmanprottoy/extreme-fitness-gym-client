@@ -17,16 +17,18 @@ const Trainers = () => {
       });
   }, []);
   return (
-    <section className="row row-cols-md-3 justify-content-center p-5 m-auto">
+    <div>
       {loading ? (
         <br />
       ) : (
         <ReactBootstrap.Spinner animation="border" variant="info" />
       )}
-      {trainers.map((trainer) => (
-        <TrainerCard trainer={trainer}></TrainerCard>
-      ))}
-    </section>
+      <section className="row row-cols-md-3 justify-content-center p-5 m-auto">
+        {trainers.map((trainer) => (
+          <TrainerCard trainer={trainer}></TrainerCard>
+        ))}
+      </section>
+    </div>
   );
 };
 
