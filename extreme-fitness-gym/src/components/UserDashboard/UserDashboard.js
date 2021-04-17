@@ -26,28 +26,34 @@ const UserDashboard = () => {
 
   return (
     <div>
-      <h1>Welcome, {loggerInUser.name}</h1>
+      <h1 className="text-info">
+        Welcome, <i> {loggerInUser.name}</i>
+      </h1>
       <div className="container mt-3 mb-3">
         {loading ? (
           <br />
         ) : (
           <ReactBootstrap.Spinner animation="border" variant="info" />
         )}
-        <Table striped bordered hover className="mt-1">
-          <thead>
-            <tr>
-              <th>Course Name</th>
-              <th>Price</th>
-              <th>Ordered Date</th>
-            </tr>
-          </thead>
+        <div className="">
+          <h2 className="text-left text-info m-2">My Purchased Services</h2>
+          <Table striped bordered hover className="mt-5 mb-5">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Price</th>
+                <th>Ordered Date</th>
+              </tr>
+            </thead>
 
-          {orders.map((order) => (
-            <Order order={order}></Order>
-          ))}
-        </Table>
+            {orders.map((order) => (
+              <Order order={order}></Order>
+            ))}
+          </Table>
+        </div>
       </div>
-      <div className="container mt-3 mb-3">
+      <div className="container mt-5 mb-3">
+        <h2 className="text-left text-info m-2">Add Review</h2>
         <AddReview />
       </div>
     </div>

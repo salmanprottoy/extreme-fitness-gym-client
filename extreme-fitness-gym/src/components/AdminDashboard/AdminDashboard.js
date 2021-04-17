@@ -55,7 +55,7 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-5 mb-5">
       {isAdmin && (
         <div className="row">
           <div className="col-lg-3 col-sm-6">

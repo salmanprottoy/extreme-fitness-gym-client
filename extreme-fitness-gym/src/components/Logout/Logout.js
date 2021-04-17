@@ -4,6 +4,9 @@ import Login from "../Login/Login";
 
 const Logout = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
+  loggerInUser.name = "";
+  loggerInUser.email = "";
+  sessionStorage.clear();
   return (
     <div>
       <Login />

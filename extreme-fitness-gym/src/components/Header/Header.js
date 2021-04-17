@@ -6,6 +6,7 @@ import { UserContext } from "../../App";
 
 const Header = () => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggerInUser);
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand>
@@ -56,6 +57,15 @@ const Header = () => {
               <Link className="nav-link mr-4 text-white" to="/login">
                 Login
               </Link>
+            )}
+          </Nav.Link>
+          <Nav.Link href="">
+            {loggerInUser.name ? (
+              <Link className="nav-link mr-4 text-white" to="/logout">
+                Logout
+              </Link>
+            ) : (
+              <h1></h1>
             )}
           </Nav.Link>
         </Nav>
