@@ -1,9 +1,23 @@
 import React from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { UserContext } from "../../App";
 import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
+  const [loggerInUser, setLoggedInUser] = useContext(UserContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    fetch("http://localhost:5000/isAdmin", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: loggerInUser.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => setIsAdmin(data));
+  }, []);
+
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/services")
@@ -42,52 +56,54 @@ const AdminDashboard = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-lg-3 col-sm-6">
-          <div className="card-box bg-blue rounded">
-            <div className="inner">
-              <h3> {services.length} </h3>
-              <p> Services </p>
+      {isAdmin && (
+        <div className="row">
+          <div className="col-lg-3 col-sm-6">
+            <div className="card-box bg-blue rounded">
+              <div className="inner">
+                <h3> {services.length} </h3>
+                <p> Services </p>
+              </div>
+              <div className="icon">
+                <i className="fas fa-dumbbell" aria-hidden="true"></i>
+              </div>
             </div>
-            <div className="icon">
-              <i className="fas fa-dumbbell" aria-hidden="true"></i>
+          </div>
+          <div className="col-lg-3 col-sm-6">
+            <div className="card-box bg-green rounded">
+              <div className="inner">
+                <h3> {trainers.length} </h3>
+                <p> Trainers </p>
+              </div>
+              <div className="icon">
+                <i className="fa fa-users" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6">
+            <div className="card-box bg-orange rounded">
+              <div className="inner">
+                <h3> {reviews.length} </h3>
+                <p> Reviews </p>
+              </div>
+              <div className="icon">
+                <i className="fas fa-comments" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-sm-6">
+            <div className="card-box bg-red rounded">
+              <div className="inner">
+                <h3> {admins.length} </h3>
+                <p> Admins </p>
+              </div>
+              <div className="icon">
+                <i className="fas fa-user-shield"></i>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-lg-3 col-sm-6">
-          <div className="card-box bg-green rounded">
-            <div className="inner">
-              <h3> {trainers.length} </h3>
-              <p> Trainers </p>
-            </div>
-            <div className="icon">
-              <i className="fa fa-users" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-sm-6">
-          <div className="card-box bg-orange rounded">
-            <div className="inner">
-              <h3> {reviews.length} </h3>
-              <p> Reviews </p>
-            </div>
-            <div className="icon">
-              <i className="fas fa-comments" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-sm-6">
-          <div className="card-box bg-red rounded">
-            <div className="inner">
-              <h3> {admins.length} </h3>
-              <p> Admins </p>
-            </div>
-            <div className="icon">
-              <i className="fas fa-user-shield"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
