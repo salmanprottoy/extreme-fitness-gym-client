@@ -3,6 +3,11 @@
 A node application build using react library that can be use as online GYM subscription place for a perticular GYM.
 
 ---
+
+![banner](https://i.ibb.co/x5yDqJN/fitness.png)
+
+---
+
 ## Live site ⚡
 
 [ Extreme Fitness GYM ](https://extreme-fitness-gym-bd.web.app/)
